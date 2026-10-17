@@ -1,4 +1,4 @@
-import { StyleSheet, Image, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Image, View, Text, StatusBar, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { 
   useFonts, 
@@ -22,6 +22,7 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.safeArea}>
+      <StatusBar hidden={false}/>
       <View style={styles.container}>
         <Image style={styles.logo} source={require("../../assets/img/logo.png")}/>
         
@@ -42,9 +43,9 @@ export default function HomeScreen() {
             </Text>
           </View>
 
-          <TouchableOpacity style={styles.button} activeOpacity={0.8}>
+          <Pressable style={styles.button}>
             <Text style={styles.buttonText}>Сканировать продукты</Text>
-          </TouchableOpacity>
+          </Pressable>
         </View>
 
       </View>
